@@ -5,4 +5,4 @@ const generateAndPrintString = () => {
     setTimeout(generateAndPrintString, 5000)
 }
 
-generateAndPrintString()
+console.log(generateAndPrintString())
