@@ -12,5 +12,5 @@ app.get('/pingpong', (req, res) => {
 })
 
 server.listen(config.PORT, () => {
-  console.log(`Crudapp server running on port ${config.PORT}`)
+  console.log(`Pingpong server running on port ${config.PORT}`)
 })
