@@ -14,7 +14,8 @@ spec:
     spec:
       volumes:
         - name: shared-text
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: text-claim
       containers:
         - name: log-output-writer
           image: melimet/log-output-writer:latest

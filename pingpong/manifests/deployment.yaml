@@ -12,6 +12,16 @@ spec:
       labels:
         app: pingpong
     spec:
+      volumes:
+          - name: shared-text
+          persistentVolumeClaim:
+            claimName: text-claim
+          volumeMounts:
+          - name: shared-text
+          mountPath: /usr/src/app/files            
       containers:
         - name: pingpong
           image: melimet/pingpong:latest
+          volumeMounts:
+          - name: shared-text
+          mountPath: /usr/src/app/files
