@@ -12,6 +12,17 @@ spec:
       labels:
         app: log-output
     spec:
+      volumes:
+        - name: shared-text
+        emptyDir: {}
       containers:
-        - name: log-output
-          image: melimet/log-output:latest
+        - name: log-output-writer
+          image: melimet/log-output-writer:latest
+          volumeMounts:
+          - name: shared-text
+          mountPath: /usr/src/app/files
+        - name: log-output-reader
+          image: melimet/log-output-reader:latest
+          volumeMounts:
+          - name: shared-text
+          mountPath: /usr/src/app/files
