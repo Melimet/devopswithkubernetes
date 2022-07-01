@@ -5,9 +5,10 @@ const http = require('http')
 
 const server = http.createServer(app)
 
-
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+var counter = 0
+app.get('/pingpong', (req, res) => {
+    counter++
+    res.send('<p>pong ' + counter + "</p>")
 })
 
 server.listen(config.PORT, () => {
