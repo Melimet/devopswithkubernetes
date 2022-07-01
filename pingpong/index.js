@@ -3,6 +3,7 @@ const app = express()
 const config = require('./utils/config')
 const http = require('http')
 const fs = require('fs')
+const path = require('path')
 const directory = path.join('/', 'usr', 'src', 'app', 'files')
 const filePath = path.join(directory, 'text.txt')
 

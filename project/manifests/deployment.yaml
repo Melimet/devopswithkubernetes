@@ -12,6 +12,12 @@ spec:
       labels:
         app: crudapp
     spec:
+        - name: crudapp-image
+          persistentVolumeClaim:
+            claimName: crudapp-claim
       containers:
         - name: crudapp
           image: melimet/crudapp:latest
+          volumeMounts:
+          - name: crudapp-image
+            mountPath: /usr/src/app/files
