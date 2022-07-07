@@ -6,7 +6,7 @@ const filePath = path.join(directory, 'text.txt')
 
 const readGeneratedText = () => {
     
-    console.log(fs.readFile(filePath))
+    //console.log(fs.readFile(filePath))
 
 
     setTimeout(readGeneratedText, 10000)

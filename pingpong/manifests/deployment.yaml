@@ -14,14 +14,14 @@ spec:
     spec:
       volumes:
           - name: shared-text
-          persistentVolumeClaim:
+            persistentVolumeClaim:
             claimName: text-claim
-          volumeMounts:
+            volumeMounts:
           - name: shared-text
-          mountPath: /usr/src/app/files            
+            mountPath: /usr/src/app/files            
       containers:
         - name: pingpong
           image: melimet/pingpong:latest
           volumeMounts:
           - name: shared-text
-          mountPath: /usr/src/app/files
+            mountPath: /usr/src/app/files

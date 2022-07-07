@@ -12,9 +12,7 @@ const server = http.createServer(app)
 var counter = 0
 app.get('/pingpong', (req, res) => {
     counter++
-    const output = "pong " + counter
     const output2 = '<p>pong ' + counter + "</p>"
-    output.data.pipe(fs.createWriteStream(filePath))
     res.send(output2)
 })
 
