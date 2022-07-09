@@ -1,3 +1,10 @@
+const express = require('express')
+const app = express()
+const config = require('./utils/config')
+const http = require('http')
+const server = http.createServer(app)
+
+
 const fs = require('fs')
 
 const path = require('path')
@@ -12,5 +19,13 @@ const readGeneratedText = () => {
     setTimeout(readGeneratedText, 10000)
 }
 
+
+app.get('/reader', (req, res) => {
+    res.send("reader response")
+})
+
 console.log("reader up")
-readGeneratedText()
+//readGeneratedText()
+server.listen(config.PORT, () => {
+    console.log(`Reader server up on port ${config.PORT}`)
+})
